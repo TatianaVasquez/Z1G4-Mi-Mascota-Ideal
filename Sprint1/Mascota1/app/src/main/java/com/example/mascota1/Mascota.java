@@ -4,8 +4,11 @@ public class Mascota {
 
     //Atributos
     private String nombre, direccion, foto, url, comentario;
+    private GeoPunto posicion;
     private int telefono;
     private float valoracion;
+    private double longitud, latitud;
+    private TipoLugar tipo;
 
     //constructor
 
@@ -13,15 +16,17 @@ public class Mascota {
         //constructor vacio
     }
 
-    public Mascota(String nombre, String direccion, String url, String comentario, int telefono, float valoracion) {
-        //constructor que pide todos los datos
+    public Mascota(String nombre, String direccion, String comentario, int telefono, float valoracion, double longitud, double latitud, TipoLugar tipo) {
         this.nombre = nombre;
         this.direccion = direccion;
-        this.url = url;
         this.comentario = comentario;
         this.telefono = telefono;
         this.valoracion = valoracion;
+        this.longitud = longitud;
+        this.latitud = latitud;
+        this.tipo = tipo;
     }
+
 
     //metodos
 
@@ -82,6 +87,38 @@ public class Mascota {
         this.valoracion = valoracion;
     }
 
+    public GeoPunto getPosicion() {
+        return posicion;
+    }
+
+    public void setPosicion(GeoPunto posicion) {
+        this.posicion = posicion;
+    }
+
+    public double getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(double longitud) {
+        this.longitud = longitud;
+    }
+
+    public double getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(double latitud) {
+        this.latitud = latitud;
+    }
+
+    public TipoLugar getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoLugar tipo) {
+        this.tipo = tipo;
+    }
+
     @Override
     public String toString() {
         return "Mascota{" +
@@ -90,8 +127,12 @@ public class Mascota {
                 ", foto='" + foto + '\'' +
                 ", url='" + url + '\'' +
                 ", comentario='" + comentario + '\'' +
+                ", posicion=" + posicion +
                 ", telefono=" + telefono +
                 ", valoracion=" + valoracion +
+                ", longitud=" + longitud +
+                ", latitud=" + latitud +
+                ", tipo=" + tipo +
                 '}';
     }
 
